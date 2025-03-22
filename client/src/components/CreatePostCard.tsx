@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Video, Image, Smile } from "lucide-react";
 
 interface CreatePostCardProps {
-  currentUser: User | null;
+  currentUser: User | null | undefined;
   onCreatePost: () => void;
 }
 

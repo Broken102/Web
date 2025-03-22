@@ -7,7 +7,7 @@ import PostCard from "@/components/PostCard";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface SocialFeedScreenProps {
-  currentUser: User | null;
+  currentUser: User | null | undefined;
 }
 
 export default function SocialFeedScreen({ currentUser }: SocialFeedScreenProps) {

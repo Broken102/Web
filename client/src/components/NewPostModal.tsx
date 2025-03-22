@@ -12,7 +12,7 @@ import { Image, X, Upload } from "lucide-react";
 interface NewPostModalProps {
   isOpen: boolean;
   onClose: () => void;
-  currentUser: User | null;
+  currentUser: User | null | undefined;
 }
 
 export default function NewPostModal({ isOpen, onClose, currentUser }: NewPostModalProps) {

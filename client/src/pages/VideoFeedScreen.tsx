@@ -6,7 +6,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface VideoFeedScreenProps {
-  currentUser: User | null;
+  currentUser: User | null | undefined;
 }
 
 export default function VideoFeedScreen({ currentUser }: VideoFeedScreenProps) {
