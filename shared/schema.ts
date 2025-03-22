@@ -6,22 +6,28 @@ import { z } from "zod";
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
   username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+  password: text("password"),  // Optional for social auth
   displayName: text("display_name").notNull(),
+  email: text("email").unique(),
   bio: text("bio"),
   location: text("location"),
   profileImageUrl: text("profile_image_url"),
   coverImageUrl: text("cover_image_url"),
+  provider: text("provider").default("local"), // local, google, facebook, instagram, tiktok, linkedin
+  providerId: text("provider_id"), // Id from the provider
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
   displayName: true,
+  email: true,
   bio: true,
   location: true,
   profileImageUrl: true,
   coverImageUrl: true,
+  provider: true,
+  providerId: true,
 });
 
 // Posts table
