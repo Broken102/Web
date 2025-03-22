@@ -37,6 +37,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Configure passport
   app.use(passport.initialize());
   app.use(passport.session());
+  app.use(express.json());
 
   passport.use(
     new LocalStrategy(async (username, password, done) => {
